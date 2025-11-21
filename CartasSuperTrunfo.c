@@ -29,7 +29,7 @@ int main() {
     printf("Digite o PIB da primeira carta: \n");
     scanf("%f", &pib1);
 
-    //Calculo do PIB per capita e densidade populacional da primeira carta e calcular o Super Poder
+    //Calculo do PPC e densidade populacional da primeira carta
     ppc1 = pib1 / populacao1;
     densidade1 = (float) populacao1 / area1;
     superPoder1 = (float) populacao1 + pontos_turisticos1 + area1 + pib1 + ppc1 - densidade1;
@@ -60,7 +60,7 @@ int main() {
     printf("Digite o PIB da segunda carta: \n");
     scanf("%f", &pib2);
 
-    //Calculo do PIB per capita e densidade populacional da segunda carta
+    //Calculo do PPC e densidade populacional da segunda carta
     ppc2 = pib2 / populacao2;
     densidade2 = (float) populacao2 / area2;
     superPoder2 = (float) populacao2 + pontos_turisticos2 + area2 + pib2 + ppc2 - densidade2;
@@ -115,15 +115,13 @@ int main() {
         (ppc1 > ppc2) ? "Primeira carta vence!" :
         (ppc1 < ppc2) ? "Segunda carta vence!" : "Empate!");
 
-    printf("Densidade Populacional: %s\n",
+    printf("Densidade Populacional: %s\n", //menor = melhor
         (densidade1 < densidade2) ? "Primeira carta vence!" :
         (densidade1 > densidade2) ? "Segunda carta vence!" : "Empate!"); 
-        // menor densidade = vence
 
     printf("Super Poder: %s\n",
         (superPoder1 > superPoder2) ? "Primeira carta vence!" :
         (superPoder1 < superPoder2) ? "Segunda carta vence!" : "Empate!");
-    
     
         return 0;
 }
